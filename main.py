@@ -3,34 +3,28 @@
 # Supongamos que el usuario ingresó: F(x)=x**2/x+3 como string y = como carácter,
 # La función "section" la dividira en dos strings: "F(x)" y "x**2/x+3"
 
-dsadsa = 3
+class Function ():
+	def option(selection=int(input('''Ingrese el número correspondiente a la función:
+	1- función racional
+	2- función racional
+	3- función racional
+	4- función racional
+	'''))):
 
-mod = [
-  'x' ,  #0
-  'y' ,  #1
-  '+' ,  #2
-  '-' ,  #3
-  '(' ,  #4
-  ')' ,  #5
-  '=' ,  #6
-  '**',  #7
-  '/' ,  #8
-]
+		if (selection == 1):
+			return 'racional'
 
-def section (string, char, intr=-1):
-  section = string.split(char)
-  if intr!=-1 :
-    return (section[intr])
-  else:
-    return (section)
+	def __init__ (self, type = option() , value):
+		self.type = type
+		self.value = value
 
-equivalencias = section('F(x)=x**2/x+3', mod[6])
-print ('equivalencia 1: ', equivalencias[0])
-print ('equivalencia 2: ', equivalencias[1])
+	def section(string, char, intr=-1):
+	    section = string.split(char)
+	    if intr != -1:
+	        return (section[intr])
+	    else:
+	        return (section)
 
-# Aplicando la funcion section repetidas veces variando los valores del caracter podemos dividir cada funcion hasta obtener cada valor individualmente
-dividendo= section(equivalencias[1], mod[8],0)
-print ('dividendo: ', dividendo)
-
-divisor= section(equivalencias[1], mod[8],1)
-print ('divisor: ', divisor)
+if __name__ == '__main__':
+	func = Function('F(x) = x**2')
+	print func.type
